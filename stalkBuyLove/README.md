@@ -1,4 +1,4 @@
-# python-playground
+# StalkBuyLove
 
 Run the program using the command:
 scrapy runspider WooplrScraper.py
