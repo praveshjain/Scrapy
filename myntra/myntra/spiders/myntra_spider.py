@@ -18,7 +18,10 @@ class MyntraSpider(Spider):
         for product in products:
            print(product.extract())
            item = MyntraItem()
-           item['title'] = product.xpath('.//div[@class="product"]/text()').extract()
-           item['url'] = product.xpath('.//@href').extract()[0]
+           item['title'] = product.xpath('.//div[@class="product"]/text()').extract()[0]
+           item['url'] = 'http://myntra.com/'+product.xpath('.//@href').extract()[0]
+           item['desc'] = product.xpath('.//@alt').extract()[0]
+           item['brand'] = product.xpath('.//div[@class="brand"]/text()').extract()[0]
+           item['uniqueId'] = product.xpath('.//@data-styleid').extract()[0]
            yield item
            break

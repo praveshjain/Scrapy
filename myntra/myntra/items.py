@@ -11,3 +11,6 @@ from scrapy.item import Item, Field
 class MyntraItem(Item):
     title = Field()
     url = Field()
+    desc = Field()
+    brand = Field()
+    uniqueId = Field()
